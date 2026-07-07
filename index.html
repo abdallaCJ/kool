@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eFootball Tournament</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🎮 eFootball Tournament</h1>
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('matches')">Matches</button>
+            <button class="tab-btn" onclick="switchTab('table')">League Table</button>
+        </div>
+    </header>
+
+    <main class="slider-container">
+        <!-- MATCHES SLIDE -->
+        <section id="matches-slide" class="slide active">
+            <h2>Upcoming & Recent Matches</h2>
+            <div id="match-list" class="match-list">
+                <!-- Matches dynamically loaded by JavaScript -->
+            </div>
+        </section>
+
+        <!-- LEAGUE TABLE SLIDE -->
+        <section id="table-slide" class="slide">
+            <h2>Standings</h2>
+            <table class="league-table">
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Team</th>
+                        <th>P</th>
+                        <th>W</th>
+                        <th>D</th>
+                        <th>L</th>
+                        <th>PTS</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Standings dynamically calculated by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- ADMIN PANEL (HIDDEN BY DEFAULT) -->
+    <section id="admin-sec" class="admin-panel" style="display: none;">
+        <h3>🛠️ Admin Control Center</h3>
+        <div class="admin-controls">
+            <select id="match-select">
+                <!-- Match options populated by JS -->
+            </select>
+            <input type="number" id="score1" placeholder="0" min="0">
+            <span>vs</span>
+            <input type="number" id="score2" placeholder="0" min="0">
+            <button onclick="updateScore()" class="btn-red">Update Score</button>
+            <button onclick="logoutAdmin()" class="btn-gray">Lock Panel</button>
+        </div>
+    </section>
+
+    <!-- SECRET TRIGGER FOOTER -->
+    <footer>
+        <span onclick="checkAdminPassword()" class="secret-trigger">🔒 System Admin</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

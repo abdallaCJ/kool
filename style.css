@@ -1,0 +1,158 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --accent-color: #38bdf8;
+    --text-color: #f8fafc;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    background: #111827;
+    box-sizing: border-box;
+}
+
+.nav-tabs {
+    margin-top: 15px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Sliding & Container Logic */
+.slider-container {
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    animation: fadeEffect 0.4s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Match UI Cards */
+.match-card {
+    background: var(--card-bg);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid var(--accent-color);
+}
+
+.team { font-weight: bold; width: 40%; }
+.team.right { text-align: right; }
+.score { font-size: 1.2rem; font-weight: 900; color: var(--accent-color); }
+
+/* Table UI Styling */
+.league-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.league-table th, .league-table td {
+    padding: 12px;
+    text-align: center;
+}
+
+.league-table th { background-color: #334155; }
+.league-table tr:nth-child(even) { background-color: #1a2238; }
+
+/* Hidden Admin Section */
+.admin-panel {
+    margin: 40px 0;
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #ef4444;
+    width: 90%;
+    max-width: 800px;
+    box-sizing: border-box;
+    animation: fadeEffect 0.3s ease-in-out;
+}
+
+.admin-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+select, input, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #334155;
+    color: white;
+}
+
+input[type="number"] { width: 60px; text-align: center; }
+select { cursor: pointer; }
+
+.btn-red { background: #ef4444; color: white; cursor: pointer; font-weight: bold; }
+.btn-gray { background: #64748b; color: white; cursor: pointer; font-weight: bold; }
+
+/* Secret Trigger Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+}
+
+.secret-trigger {
+    opacity: 0.2;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: opacity 0.3s;
+}
+
+.secret-trigger:hover {
+    opacity: 0.8;
+}
